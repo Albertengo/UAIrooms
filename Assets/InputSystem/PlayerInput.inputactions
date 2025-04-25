@@ -42,7 +42,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Peak Right",
+                    "name": "Peek Right",
                     "type": "Button",
                     "id": "7d47268d-fa6f-48bc-a65c-064ff185d0a6",
                     "expectedControlType": "Button",
@@ -51,7 +51,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Peak Left",
+                    "name": "Peek Left",
                     "type": "Button",
                     "id": "b9a0fed8-3221-411b-a845-5cb74f519764",
                     "expectedControlType": "Button",
@@ -156,7 +156,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Peak Right",
+                    "action": "Peek Right",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -167,35 +167,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Peak Left",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                }
-            ]
-        },
-        {
-            "name": "New action map1",
-            "id": "2b86d735-5586-4784-b382-434496cda92c",
-            "actions": [
-                {
-                    "name": "New action",
-                    "type": "Button",
-                    "id": "c5fb6bd6-518b-498b-bb06-a32ae725a4c3",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                }
-            ],
-            "bindings": [
-                {
-                    "name": "",
-                    "id": "0082170c-a040-460c-bc9f-2ca9d9f301d6",
-                    "path": "",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "New action",
+                    "action": "Peek Left",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
