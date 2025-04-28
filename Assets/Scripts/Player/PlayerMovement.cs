@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
 
     PlayerInput playerInput;
     InputAction moveAction;
-    [SerializeField] float Speed;
+    public float Speed;
     [SerializeField] Transform cameraTransform;
     private Vector3 WhereMyCameraIsLocated;
     private Vector3 WhatMyCameraIsLookingAt;
