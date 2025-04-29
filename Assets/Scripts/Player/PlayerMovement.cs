@@ -5,8 +5,6 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
-  
-
     PlayerInput playerInput;
     InputAction moveAction;
     public float Speed;
@@ -16,7 +14,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
-       playerInput = GetComponent<PlayerInput>();
+        playerInput = GetComponent<PlayerInput>();
         moveAction = playerInput.actions.FindAction("Move");
 
         HideMouse();
