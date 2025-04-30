@@ -971,7 +971,7 @@ GameObject:
   - component: {fileID: 682873419}
   m_Layer: 0
   m_Name: Floor
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1753,6 +1753,8 @@ MonoBehaviour:
   cameraTransform: {fileID: 18768467}
   speed: 10
   AddSpeed: 5
+  rb: {fileID: 1172663678}
+  jumpForce: 5
 --- !u!54 &1172663678
 Rigidbody:
   m_ObjectHideFlags: 0

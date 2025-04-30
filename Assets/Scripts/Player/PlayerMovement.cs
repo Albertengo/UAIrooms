@@ -16,6 +16,11 @@ public class PlayerMovement : MonoBehaviour
     private float initialSpeed;
     [SerializeField] float AddSpeed;
 
+    [Header("JUMP")]
+    [SerializeField] Rigidbody rb;
+    [SerializeField] float jumpForce;
+    int availableJumps = 1;
+
 
 
 
@@ -29,6 +34,7 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         Run();
+        Jump();
         MovePlayer();
     }
 
@@ -51,13 +57,30 @@ public class PlayerMovement : MonoBehaviour
         transform.position += desiredMoveDirection * speed * Time.deltaTime;
     }
 
-    void Run()
+
+    void Run() //Hacer que la velocidad aumente y disminuya de forma gradual(?
     {
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKey(KeyCode.LeftShift))
         {
             speed = initialSpeed + AddSpeed;
         }
         else
             speed = initialSpeed;
+    }
+
+
+    void Jump()
+    {
+        if (availableJumps == 1 && Input.GetKeyDown(KeyCode.Space))
+        {
+            rb.AddForce(new Vector3(0, jumpForce, 0), ForceMode.Impulse);
+            availableJumps = 0;
+        } 
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Floor"))
+            availableJumps = 1;
     }
 }
