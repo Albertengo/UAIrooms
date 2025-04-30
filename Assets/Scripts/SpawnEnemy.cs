@@ -5,7 +5,7 @@ public class SpawnEnemy : MonoBehaviour
   
     public GameObject enemyPrefab;
 
-    private bool hasSpawned = false;
+    public bool hasSpawned = false;
     public Transform spawnPoint;
 
     private void OnTriggerEnter(Collider other)
