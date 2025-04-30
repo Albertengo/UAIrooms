@@ -6,6 +6,9 @@ public class PlayerHealth : MonoBehaviour
 {
     private void OnCollisionEnter(Collision collision)
     {
-        //if (collision.gameObject.CompareTag())
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            GameManager.instance.GameOver();
+        }
     }
 }
