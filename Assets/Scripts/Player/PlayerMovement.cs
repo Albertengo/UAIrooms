@@ -7,19 +7,28 @@ public class PlayerMovement : MonoBehaviour
 {
     PlayerInput playerInput;
     InputAction moveAction;
-    public float Speed;
+
+    [Header("CAMERA TRANSFORM")]
     [SerializeField] Transform cameraTransform;
-    private Vector3 WhereMyCameraIsLocated;
-    private Vector3 WhatMyCameraIsLookingAt;
+
+    [Header("SPEED")]
+    public float speed;
+    private float initialSpeed;
+    [SerializeField] float AddSpeed;
+
+
+
 
     void Start()
     {
         playerInput = GetComponent<PlayerInput>();
         moveAction = playerInput.actions.FindAction("Move");
+        initialSpeed = speed;
     }
 
     void Update()
     {
+        Run();
         MovePlayer();
     }
 
@@ -39,14 +48,16 @@ public class PlayerMovement : MonoBehaviour
         Vector3 desiredMoveDirection = forward * move.z + right * move.x;
         desiredMoveDirection.Normalize();
 
-        transform.position += desiredMoveDirection * Speed * Time.deltaTime;
-
-        /*este codigo hizo q el player como q SALTE a una posicion especifica, es re raro...
-        Vector3 move = new Vector3(direction.x, 0f, direction.y);
-        move = cameraTransform.forward * move.z + cameraTransform.right * move.x;
-        move.y = 0f;
-        transform.position = move * Speed; //Time.deltaTime * Speed;
-        */
+        transform.position += desiredMoveDirection * speed * Time.deltaTime;
     }
 
+    void Run()
+    {
+        if (Input.GetKey(KeyCode.Space))
+        {
+            speed = initialSpeed + AddSpeed;
+        }
+        else
+            speed = initialSpeed;
+    }
 }

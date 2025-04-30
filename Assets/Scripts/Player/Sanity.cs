@@ -26,7 +26,7 @@ public class Sanity : MonoBehaviour
         if (reduceSanity)
         {
             sanitySlider.value -= Time.deltaTime;
-            playerMovement.Speed = Mathf.Max(2f, playerMovement.Speed - Time.deltaTime * 0.5f);
+            playerMovement.speed = Mathf.Max(2f, playerMovement.speed - Time.deltaTime * 0.5f);
 
             if (sanitySlider.value == 0)
                 GameManager.instance.GameOver();
@@ -34,7 +34,7 @@ public class Sanity : MonoBehaviour
         else
         {
             sanitySlider.value += Time.deltaTime;
-            playerMovement.Speed = Mathf.Min(10, playerMovement.Speed + Time.deltaTime); //aumenta el valor de speed y hace que no se pase de 10
+            playerMovement.speed = Mathf.Min(10, playerMovement.speed + Time.deltaTime); //aumenta el valor de speed y hace que no se pase de 10
         }
     }
 
