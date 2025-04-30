@@ -64,11 +64,11 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftShift))
         {
             speed = initialSpeed + AddSpeed;
-            Debug.Log(speed);
+            //Debug.Log(speed);
         }
         else
             speed = initialSpeed;
-        Debug.Log(speed);
+        //Debug.Log(speed);
     }
 
 
