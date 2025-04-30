@@ -16,8 +16,6 @@ public class PlayerMovement : MonoBehaviour
     {
         playerInput = GetComponent<PlayerInput>();
         moveAction = playerInput.actions.FindAction("Move");
-
-        HideMouse();
     }
 
     void Update()
@@ -51,10 +49,4 @@ public class PlayerMovement : MonoBehaviour
         */
     }
 
-
-    void HideMouse()
-    {
-        Cursor.visible = false; // Hide the cursor
-        Cursor.lockState = CursorLockMode.Locked;
-    }
 }

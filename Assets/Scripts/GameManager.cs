@@ -27,7 +27,13 @@ public class GameManager : MonoBehaviour
             Destroy(this);
         }
 
+       
+    }
+
+    void Start()
+    {
         pauseMenu.SetActive(false);
+        HideMouse();
     }
 
     private void Update()
@@ -43,7 +49,15 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(SceneNumber); //resetear escena actual
     }
 
-    
+
+
+    void HideMouse()
+    {
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+    }
+
+
 
     void PauseGame()
     {
@@ -55,7 +69,6 @@ public class GameManager : MonoBehaviour
             }
             else
                 PauseState(false, 1);
-
         }
     }
 
