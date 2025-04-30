@@ -37,19 +37,20 @@ public class PlayerMovement : MonoBehaviour
         // Aplanamos el movimiento en el plano XZ
         forward.y = 0f;
         right.y = 0f;
-        forward.Normalize();
-        right.Normalize();
 
         Vector3 desiredMoveDirection = forward * move.z + right * move.x;
+        desiredMoveDirection.Normalize();
+
         transform.position += desiredMoveDirection * Speed * Time.deltaTime;
 
-        /* este codigo hizo q el player como q SALTE a una posicion especifica, es re raro...
+        /*este codigo hizo q el player como q SALTE a una posicion especifica, es re raro...
         Vector3 move = new Vector3(direction.x, 0f, direction.y);
         move = cameraTransform.forward * move.z + cameraTransform.right * move.x;
         move.y = 0f;
         transform.position = move * Speed; //Time.deltaTime * Speed;
         */
     }
+
 
     void HideMouse()
     {

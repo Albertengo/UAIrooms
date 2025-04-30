@@ -5,6 +5,8 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance { get; private set; }
+    [SerializeField] GameObject pauseMenu;
+
 
     void Awake()
     {
@@ -18,8 +20,16 @@ public class GameManager : MonoBehaviour
         }
     }
 
+
+
     public void GameOver()
     {
         Debug.Log("Perdiste");
+    }
+
+    void PauseGame()
+    {
+        pauseMenu.SetActive(true);
+        Time.timeScale = 0f;
     }
 }
