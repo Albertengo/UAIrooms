@@ -35,6 +35,10 @@ public class PlayerMovement : MonoBehaviour
     {
         Run();
         Jump();
+        
+    }
+    private void FixedUpdate()
+    {
         MovePlayer();
     }
 
@@ -43,18 +47,15 @@ public class PlayerMovement : MonoBehaviour
         Vector2 direction = moveAction.ReadValue<Vector2>();
         Vector3 move = new Vector3(direction.x, 0f, direction.y);
 
-        // Convertir el movimiento al espacio de la cámara
         Vector3 forward = cameraTransform.forward;
         Vector3 right = cameraTransform.right;
 
-        // Aplanamos el movimiento en el plano XZ
         forward.y = 0f;
         right.y = 0f;
 
-        Vector3 desiredMoveDirection = forward * move.z + right * move.x;
-        desiredMoveDirection.Normalize();
+        Vector3 desiredMoveDirection = (forward * move.z + right * move.x).normalized;
 
-        transform.position += desiredMoveDirection * speed * Time.deltaTime;
+        rb.velocity = desiredMoveDirection * speed + new Vector3(0, rb.velocity.y, 0);
     }
 
 
@@ -63,9 +64,11 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftShift))
         {
             speed = initialSpeed + AddSpeed;
+            Debug.Log(speed);
         }
         else
             speed = initialSpeed;
+        Debug.Log(speed);
     }
 
 
