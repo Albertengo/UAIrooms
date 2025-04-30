@@ -5,20 +5,18 @@ using UnityEngine;
 public class WinScreen : MonoBehaviour
 {
     public GameObject VictoryScreen;
+    public SpawnEnemy Enemy;
 
-    private SpawnEnemy Enemy;
+
     private void Start()
     {
         VictoryScreen.SetActive(false);
-    }
-    private void Update()
-    {
-        
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (Enemy.hasSpawned == false) return;
+
 
         if (other.CompareTag("Player"))
         {
