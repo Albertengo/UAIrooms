@@ -75,7 +75,7 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.AddForce(new Vector3(0, jumpForce, 0), ForceMode.Impulse);
             availableJumps = 0;
-        } 
+        }
     }
 
     private void OnCollisionEnter(Collision collision)

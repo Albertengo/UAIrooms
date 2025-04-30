@@ -13,14 +13,17 @@ public class TriggerEvent : MonoBehaviour
 
 
     private void OnTriggerEnter(Collider other) 
-    {
-        switch (eventName)
-        {
-            case "Spawn": Instantiate(enemyPrefab, spawn.transform.position, Quaternion.identity);
-                break;
+        
+    { 
+     switch (eventName)
+{
+    case "Spawn":
+        Instantiate(enemyPrefab, spawn.transform.position, Quaternion.identity);
+        break;
 
-            case "Exit": GameManager.instance.Win();
-                break;
-        }
+    case "Exit":
+        GameManager.instance.Win();
+        break;
+}
     }
 }
