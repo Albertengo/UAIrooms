@@ -48,6 +48,10 @@ public class GameManager : MonoBehaviour
         Debug.Log("Perdiste");
         SceneManager.LoadScene(SceneNumber); //resetear escena actual
     }
+    public void Win()
+    {
+        Debug.Log("Ganaste");
+    }
 
 
 
