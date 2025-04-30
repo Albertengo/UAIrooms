@@ -24,7 +24,8 @@ public class PlayerInteraction_2 : MonoBehaviour
     private void Interaction(InputAction.CallbackContext obj)
     {
         Detection.InteractionInRange();
-        Animator.Play("Attack");
+        Debug.Log("Pressing F");
+        //Animator.Play("Attack");
         EndInteraction.Interacting = true; //se podria activar un canvas maybe
     }
     void ActualizarAnimacion() //no sé si realmente necesitamos esto pero lo dejo x las dudas hasta q lo tengamos + claro -ori

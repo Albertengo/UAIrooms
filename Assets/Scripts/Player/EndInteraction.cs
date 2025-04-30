@@ -6,5 +6,6 @@ public class EndInteraction : MonoBehaviour
     public void end_Interaction()
     {
         Interacting = false;
+        Debug.Log("Interaccion terminada");
     }
 }

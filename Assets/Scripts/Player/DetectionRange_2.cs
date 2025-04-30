@@ -10,7 +10,8 @@ public class DetectionRange_2 : MonoBehaviour
 
     public void InteractionInRange()
     {
-        if (Physics.Raycast(Origin.position, Origin.right, out hit, hitRange, this.gameObject.GetComponent<PlayerInteraction_2/*PlayerInteraction*/>().Interaction_Layer)) //(hit.collider != null)
+        Debug.Log("Hay un interactuable");
+        if (Physics.Raycast(Origin.position, Origin.forward, out hit, hitRange, this.gameObject.GetComponent<PlayerInteraction_2>().Interaction_Layer)) //(hit.collider != null)
         {
             //hit.collider.GetComponent<Enemies>()?.recibirDaño(); //acá lo cambiamos con una funcion q se tenga de NPC para activar dialogo o agarrar objeto
             //GetComponent<PlayerAttack>().detected = true;
