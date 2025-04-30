@@ -7,21 +7,34 @@ public class PlayerMovement : MonoBehaviour
 {
     PlayerInput playerInput;
     InputAction moveAction;
-    public float Speed;
+
+    [Header("CAMERA TRANSFORM")]
     [SerializeField] Transform cameraTransform;
-    private Vector3 WhereMyCameraIsLocated;
-    private Vector3 WhatMyCameraIsLookingAt;
+
+    [Header("SPEED")]
+    public float speed;
+    private float initialSpeed;
+    [SerializeField] float AddSpeed;
+
+    [Header("JUMP")]
+    [SerializeField] Rigidbody rb;
+    [SerializeField] float jumpForce;
+    int availableJumps = 1;
+
+
+
 
     void Start()
     {
         playerInput = GetComponent<PlayerInput>();
         moveAction = playerInput.actions.FindAction("Move");
-
-        HideMouse();
+        initialSpeed = speed;
     }
 
     void Update()
     {
+        Run();
+        Jump();
         MovePlayer();
     }
 
@@ -41,20 +54,33 @@ public class PlayerMovement : MonoBehaviour
         Vector3 desiredMoveDirection = forward * move.z + right * move.x;
         desiredMoveDirection.Normalize();
 
-        transform.position += desiredMoveDirection * Speed * Time.deltaTime;
-
-        /*este codigo hizo q el player como q SALTE a una posicion especifica, es re raro...
-        Vector3 move = new Vector3(direction.x, 0f, direction.y);
-        move = cameraTransform.forward * move.z + cameraTransform.right * move.x;
-        move.y = 0f;
-        transform.position = move * Speed; //Time.deltaTime * Speed;
-        */
+        transform.position += desiredMoveDirection * speed * Time.deltaTime;
     }
 
 
-    void HideMouse()
+    void Run() //Hacer que la velocidad aumente y disminuya de forma gradual(?
     {
-        Cursor.visible = false; // Hide the cursor
-        Cursor.lockState = CursorLockMode.Locked;
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            speed = initialSpeed + AddSpeed;
+        }
+        else
+            speed = initialSpeed;
+    }
+
+
+    void Jump()
+    {
+        if (availableJumps == 1 && Input.GetKeyDown(KeyCode.Space))
+        {
+            rb.AddForce(new Vector3(0, jumpForce, 0), ForceMode.Impulse);
+            availableJumps = 0;
+        } 
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Floor"))
+            availableJumps = 1;
     }
 }
