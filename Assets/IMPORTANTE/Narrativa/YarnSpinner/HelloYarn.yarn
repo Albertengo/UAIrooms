@@ -1,16 +1,28 @@
 ﻿title: Start
+tags: 
+position: 90,-209
 ---
-HOLA!!!!!!!!!!!!!!!
-My first ever Yarn script in Unity!
+Cubo: HOLA!!!!!!!!!!!!!!!
+Cubo: My first ever Yarn script in Unity!
 
 -> LA PUTA MADREEEE OSIIIIIII
-    <<jump OtherNode>>
--> Incredible!
+    <<jump Reaccion1>>
+-> qué me importa.....
+   <<jump Reaccion2>>
 -> I'm amazed!
 
-Anyway, time to get writing!
+Cubo: Anyway, time to get writing!
 ===
-title: OtherNode
+title: Reaccion1
+position: 95,43
 ---
-WOAAAAA!!!
+Cubo: WOAAAAA!!!
+===
+title: Reaccion2
+position: -124,48
+---
+Cubo: te odio.
+-> lol lmao skill issue
+-> ok
+Cubo: ya vas a ver.......
 ===

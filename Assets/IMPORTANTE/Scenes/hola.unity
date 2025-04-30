@@ -1812,6 +1812,7 @@ GameObject:
   - component: {fileID: 1305038242}
   - component: {fileID: 1305038241}
   - component: {fileID: 1305038245}
+  - component: {fileID: 1305038246}
   m_Layer: 6
   m_Name: Cube_NPC
   m_TagString: Untagged
@@ -1919,6 +1920,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   helpOverlay: {fileID: 2060998653}
+--- !u!114 &1305038246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1305038240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7636f90f333ee764983384485fa91c47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterName: cubo raro...
+  talkToNode: Start
 --- !u!1 &1493946032
 GameObject:
   m_ObjectHideFlags: 0
@@ -2559,7 +2574,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 7778558434935992802, guid: 7f29e5f7ffdea4a6793cefb278b61f0c, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 7778558435068644802, guid: 7f29e5f7ffdea4a6793cefb278b61f0c,
