@@ -6,6 +6,7 @@ public class SpawnEnemy : MonoBehaviour
     public GameObject enemyPrefab;
 
     private bool hasSpawned = false;
+    public Transform spawnPoint;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -13,15 +14,12 @@ public class SpawnEnemy : MonoBehaviour
 
         if (other.CompareTag("Player"))
         {
-            if (enemyPrefab != null)
+            if (enemyPrefab != null && spawnPoint != null)
             {
-                Instantiate(enemyPrefab, transform.position, transform.rotation);
+                Instantiate(enemyPrefab, spawnPoint.position, spawnPoint.rotation);
                 hasSpawned = true; 
             }
-            else
-            {
-                Debug.LogWarning("no hay enemy prefab");
-            }
+
         }
     }
 }
