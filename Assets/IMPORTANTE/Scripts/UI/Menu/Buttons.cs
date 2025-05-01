@@ -17,7 +17,7 @@ namespace interfaz
         {
             //Prob vamos a tener q hacer algo asi desp asi q no lo saco x ahora -ori
             //PlayerPrefs.SetInt("MaxCombo", 0);
-            SceneManager.LoadScene("hola");//("Game");
+            SceneManager.LoadScene("hola 1");//("Game");
             Time.timeScale = 1f;
         }
 
