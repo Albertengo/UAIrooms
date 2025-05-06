@@ -9,12 +9,12 @@ EditorBuildSettings:
     path: "Assets/IMPORTANTE/Scenes/Men\xFA_Inicio.unity"
     guid: 1a5ee5eb372c5a7468a46b0c30dbd08a
   - enabled: 1
-    path: Assets/IMPORTANTE/Scenes/hola.unity
+    path: Assets/IMPORTANTE/Scenes/Pruebas.unity
     guid: c031247f58b85d24585339273fd009a8
   - enabled: 1
     path: Assets/IMPORTANTE/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
-    path: Assets/IMPORTANTE/Scenes/hola 1.unity
+    path: Assets/IMPORTANTE/Scenes/Prototipo.unity
     guid: 8b8e9d72ae823714f80439262622a2b1
   m_configObjects: {}

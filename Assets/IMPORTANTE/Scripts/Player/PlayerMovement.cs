@@ -23,7 +23,6 @@ public class PlayerMovement : MonoBehaviour
 
 
 
-
     void Start()
     {
         playerInput = GetComponent<PlayerInput>();
@@ -35,12 +34,13 @@ public class PlayerMovement : MonoBehaviour
     {
         Run();
         Jump();
-        
     }
-    private void FixedUpdate()
+    void FixedUpdate()
     {
         MovePlayer();
     }
+
+
 
     void MovePlayer()
     {
@@ -61,14 +61,12 @@ public class PlayerMovement : MonoBehaviour
 
     void Run() //Hacer que la velocidad aumente y disminuya de forma gradual(?
     {
-        if (Input.GetKey(KeyCode.LeftShift))
+        if (Input.GetKey(KeyCode.LeftShift)) // Cambiar a Input System
         {
             speed = initialSpeed + AddSpeed;
-            //Debug.Log(speed);
         }
         else
             speed = initialSpeed;
-        //Debug.Log(speed);
     }
 
 
