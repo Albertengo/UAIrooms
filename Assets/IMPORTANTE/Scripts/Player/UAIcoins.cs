@@ -5,9 +5,17 @@ using UnityEngine;
 
 public class UAIcoins : MonoBehaviour
 {
-    public int Coins;
+    private int coins;
+    public int Coins
+    {
+        get { return coins; }
+        set { coins = Mathf.Max(0, value); }
+    }
+
     [SerializeField] TextMeshProUGUI CoinText;
     [SerializeField] bool Hay_Texto_En_Escena;
+
+
     void Start()
     {
         if (Hay_Texto_En_Escena)
@@ -16,11 +24,11 @@ public class UAIcoins : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
         ShowCoins();
     }
+
 
     void ShowCoins()
     {
@@ -30,7 +38,7 @@ public class UAIcoins : MonoBehaviour
         }
     }
 
-    public void Tienda(int costo) //habria q agregar codigo para que no salgan numeros negativos 
+    public void Tienda(int costo)
     {
         Coins = Coins - costo;
     }
