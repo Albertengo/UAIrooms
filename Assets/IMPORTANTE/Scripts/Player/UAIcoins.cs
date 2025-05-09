@@ -12,7 +12,7 @@ public class UAIcoins : MonoBehaviour
         set { coins = Mathf.Max(0, value); }
     }
 
-    [SerializeField] TextMeshProUGUI CoinText;
+    public TextMeshProUGUI CoinText;
     [SerializeField] bool Hay_Texto_En_Escena;
 
 

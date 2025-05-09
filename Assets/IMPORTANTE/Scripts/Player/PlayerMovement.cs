@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
 {
     PlayerInput playerInput;
     InputAction moveAction;
+    public bool canMove;
 
     [Header("CAMERA TRANSFORM")]
     [SerializeField] Transform cameraTransform;
@@ -28,16 +29,17 @@ public class PlayerMovement : MonoBehaviour
         playerInput = GetComponent<PlayerInput>();
         moveAction = playerInput.actions.FindAction("Move");
         initialSpeed = speed;
+        canMove = false;
     }
 
-    void Update()
-    {
-        Run();
-        Jump();
-    }
     void FixedUpdate()
     {
-        MovePlayer();
+        if (canMove)
+        {
+            MovePlayer();
+            Jump();
+            Run();
+        }
     }
 
 
