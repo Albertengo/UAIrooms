@@ -30,11 +30,11 @@ public class UAIcoins : MonoBehaviour
     }
 
 
-    void ShowCoins()
+    public void ShowCoins()
     {
         if (Hay_Texto_En_Escena)
         {
-            CoinText.text = "UAIcoins: " + Coins;
+            CoinText.text = "uaiCoins: " + Coins;
         }
     }
 
