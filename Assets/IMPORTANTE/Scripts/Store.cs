@@ -13,10 +13,13 @@ public class Store : MonoBehaviour
     [SerializeField] GameObject storeUI;
 
     [Header("PRODUCT INFORMATION LIST")]
-    [SerializeField] List<GameObject> products;
+    [SerializeField] List<Product> products;
+
+    [SerializeField] List<GameObject> allProductsDescriptions;
+    //[SerializeField] List<GameObject> products;
     [SerializeField] List<int> stocks;
     [SerializeField] List<int> costs;
-    //[SerializeField] List<TextMeshProUGUI> stockText;
+    [SerializeField] List<TextMeshProUGUI> stockText; //ver si hay alguna forma de no usar tantas listas
 
 
     private void Start()
@@ -32,26 +35,33 @@ public class Store : MonoBehaviour
 
     public void Buy(int productNumber)
     {
-        //acceder al costo del prefab
-        if (stocks[productNumber] > 0 &&  uaiCoins.Coins >= costs[productNumber])
+        Product newProduct = products[productNumber];
+
+        if (newProduct.stock > 0 &&  uaiCoins.Coins >= newProduct.cost)
         {
-            uaiCoins.Coins -= costs[productNumber];
-            stocks[productNumber] -= 1;
+            uaiCoins.Coins -= newProduct.cost;
+            newProduct.stock--;
 
             uaiCoins.ShowCoins();
-            //stockText[productNumber];
-            //actualizar texto de moneda y stock del articulo
-            //añadir a inventario de jugador
-
-            //agregar descripcion de objeto (
+            newProduct.stockText.text = stocks[productNumber].ToString();
+            //añadir a "inventario" de jugador
         }
-        else { Debug.Log("El dinero no es suficiente par comprar este articulo"); /*tirar dialogo o aviso de que no es posible realizar la compra*/ }
-
-        //- revisa si la cantidad de moneda es suficiente con un if y si hay stock de el producto
-        // si la cantidad de monedas es suficiente se descuenta el dinero y se resta el stock - si no es suficiente tirar un aviso o dialogo del vendedor
-        //actalizarf texto de monedas disponibles y stocks
-        // se entrega el producto al jugador (añadir a una lista para que el jugador pueda usarlo mas tarde)
+        else { Debug.Log("El dinero no es suficiente par comprar este articulo"); /*tirar dialogo, sonido o aviso de que no es posible realizar la compra*/ }
     }
+
+    public void ShowProductDescription(GameObject description)
+    {
+        for (int i = 0; products.Count > i; i++)
+        {
+            if (products[i].productDescription.activeInHierarchy)
+            {
+                products[i].productDescription.SetActive(false);
+            } 
+        }
+        
+       description.SetActive(true);
+    }
+
 
 
     void QuitStore()
