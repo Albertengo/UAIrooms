@@ -12,14 +12,9 @@ public class Store : MonoBehaviour
     [Header("UI")]
     [SerializeField] GameObject storeUI;
 
-    [Header("PRODUCT INFORMATION LIST")]
+    [Header("PRODUCT LIST")]
     [SerializeField] List<Product> products;
 
-    [SerializeField] List<GameObject> allProductsDescriptions;
-    //[SerializeField] List<GameObject> products;
-    [SerializeField] List<int> stocks;
-    [SerializeField] List<int> costs;
-    [SerializeField] List<TextMeshProUGUI> stockText; //ver si hay alguna forma de no usar tantas listas
 
 
     private void Start()
@@ -32,7 +27,7 @@ public class Store : MonoBehaviour
     }
 
 
-
+    //Los metodos que estan como publicos se llaman desde botones de la UI
     public void Buy(int productNumber)
     {
         Product newProduct = products[productNumber];
@@ -43,14 +38,17 @@ public class Store : MonoBehaviour
             newProduct.stock--;
 
             uaiCoins.ShowCoins();
-            newProduct.stockText.text = stocks[productNumber].ToString();
-            //añadir a "inventario" de jugador
+            newProduct.stockText.text = newProduct.stock.ToString();
+            //añadir a "inventario" (inventory manager) de jugador, si es un dialogo (producto que no es del tipo objeto) entonces se triggerea el evento
         }
         else { Debug.Log("El dinero no es suficiente par comprar este articulo"); /*tirar dialogo, sonido o aviso de que no es posible realizar la compra*/ }
     }
 
-    public void ShowProductDescription(GameObject description)
+
+    public void ShowProductDescription(GameObject description) //en vez de que cada producto tenga un panel propio, que solo cambie la descripcion, nombre e imagen del producto(?, chequear numero de descripcion abierta para que buy tome el prodcuto correcto
     {
+        description.SetActive(true);
+
         for (int i = 0; products.Count > i; i++)
         {
             if (products[i].productDescription.activeInHierarchy)
@@ -58,38 +56,26 @@ public class Store : MonoBehaviour
                 products[i].productDescription.SetActive(false);
             } 
         }
-        
-       description.SetActive(true);
     }
 
 
-
-    void QuitStore()
+    public void QuitStore()
     {
-        // si se presiona la opcion de salir el jugador puede moverse libremente nuevamente (bool)
-        playerMovement.canMove = true; //metodo de movimeinto
-
-        storeUI.SetActive(false);
-        //desactivar canva de tienda
-
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
-        //el mouse se esconde y bloquea nuevamente
-
+        StoreInteraction(false, CursorLockMode.Locked);
     }
 
-    void EnterStore()
+    public void EnterStore() //llamar este metodo cuando se toca un trigger o se interactua
     {
-        // se activa el canva de la tienda
-        storeUI.SetActive(true);
+        StoreInteraction(true, CursorLockMode.None);
+    }
 
-        Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.None;
-        //el mouse es visible nuevamente y no esta bloqueado
+    void StoreInteraction(bool activeStoreUI, CursorLockMode cursorState) 
+    {
+        storeUI.SetActive(activeStoreUI);
 
+        Cursor.visible = activeStoreUI;
+        Cursor.lockState = cursorState;
 
-        playerMovement.canMove = false; //todo lo realcionado con el movimiento del jugador se podria englobar en un metodo
-        //camara no puede moverse
-        // Rotar y moverse automaticamente hacia la tienda suavemente
+        playerMovement.canMove = !activeStoreUI; //camara debe de bloquearse, rotar y moverse hacia la tienda
     }
 }
