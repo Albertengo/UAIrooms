@@ -4141,6 +4141,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe9fa43e5d57b95438d5c660448ccd36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerMovement: {fileID: 1172663677}
+  uaiCoins: {fileID: 1172663681}
   storeUI: {fileID: 99158992}
   descriptionPanel: {fileID: 49994054}
   costText: {fileID: 1654188249}

@@ -121,5 +121,6 @@ MonoBehaviour:
   name: Battery
   productDescription: Recarga la bateria de la linterna
   productObject: {fileID: 5453888096123958638}
-  stock: 3
+  initialStock: 2
+  currentStock: 2
   cost: 1

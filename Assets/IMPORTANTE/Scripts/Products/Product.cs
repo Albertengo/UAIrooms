@@ -11,7 +11,8 @@ public class Product : MonoBehaviour
     public string name;
     public string productDescription;
     public GameObject productObject;
-    public int stock;
+    public int initialStock;
+    public int currentStock;
     public int cost;
 
     //public string productType; //puede ser un objeto a un evento como un dialogo ("object" - "event"), usar esto hace que sea menos expandible y mas sucio el codigo

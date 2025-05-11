@@ -121,5 +121,6 @@ MonoBehaviour:
   name: Food
   productDescription: Al consumirlo se aumenta la sanidad
   productObject: {fileID: 5453888096123958638}
-  stock: 3
+  initialStock: 3
+  currentStock: 3
   cost: 2
