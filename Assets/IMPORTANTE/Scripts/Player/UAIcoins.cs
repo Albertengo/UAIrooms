@@ -18,24 +18,27 @@ public class UAIcoins : MonoBehaviour
 
     void Start()
     {
-        if (Hay_Texto_En_Escena)
+        /*if (Hay_Texto_En_Escena)
         {
             CoinText = GetComponent<TextMeshProUGUI>();
-        }
-    }
+        }*/
 
-    void Update()
-    {
+        
+        Coins = 10;
         ShowCoins();
     }
+    /*void Update()
+    {
+        ShowCoins();
+    }*/
 
 
     public void ShowCoins()
     {
-        if (Hay_Texto_En_Escena)
-        {
+        //if (Hay_Texto_En_Escena)
+        //{
             CoinText.text = "uaiCoins: " + Coins;
-        }
+        //}
     }
 
     public void Tienda(int costo)

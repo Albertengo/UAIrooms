@@ -6,11 +6,11 @@ using UnityEngine;
 
 [System.Serializable]
 
-public class Product
+public class Product : MonoBehaviour
 {
-    public GameObject productDescription;
+    public string name;
+    public string productDescription;
     public GameObject productObject;
-    public TextMeshProUGUI stockText;
     public int stock;
     public int cost;
 

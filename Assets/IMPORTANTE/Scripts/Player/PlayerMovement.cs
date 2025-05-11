@@ -29,7 +29,7 @@ public class PlayerMovement : MonoBehaviour
         playerInput = GetComponent<PlayerInput>();
         moveAction = playerInput.actions.FindAction("Move");
         initialSpeed = speed;
-        canMove = false;
+        canMove = true;
     }
 
     void FixedUpdate()
