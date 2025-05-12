@@ -10,6 +10,7 @@ public class Store : MonoBehaviour
     public CinemachineInputProvider inputProvider;
     public PlayerMovement playerMovement;
     public UAIcoins uaiCoins;
+    public ButtonProduct buttonProduct;
 
 
     [Header("UI PANELS")]
@@ -18,6 +19,7 @@ public class Store : MonoBehaviour
 
     [Header("TEXT")]
     [SerializeField] TextMeshProUGUI costText;
+    //[SerializeField] TextMeshProUGUI stockText;
     [SerializeField] TextMeshProUGUI descriptionText;
     [SerializeField] TextMeshProUGUI nameText;
 
@@ -32,6 +34,9 @@ public class Store : MonoBehaviour
         GameObject player = GameObject.Find("Player");
         playerMovement = player.GetComponent<PlayerMovement>();
         uaiCoins = player.GetComponent<UAIcoins>();
+
+        GameObject button = GameObject.FindGameObjectWithTag("ProductButton");
+        buttonProduct = button.GetComponent<ButtonProduct>();
 
         ResetStocks();
         storeUI.SetActive(false);
@@ -62,12 +67,16 @@ public class Store : MonoBehaviour
             uaiCoins.Coins -= newProduct.cost;
             newProduct.currentStock--;
 
-            
+
             uaiCoins.ShowCoins();
             Debug.Log("Compra realizada");
             //añadir a "inventario" (inventory manager) de jugador, si es un dialogo (producto que no es del tipo objeto) entonces se triggerea el evento
         }
-        else { Debug.Log("El dinero no es suficiente par comprar este articulo / No hay suficiente initialStock"); /*tirar dialogo, sonido o aviso de que no es posible realizar la compra*/ }
+        else if (newProduct.currentStock == 0)
+            buttonProduct.OutOfStock();
+        //Debug.Log("No hay suficiente initialStock");
+        else
+        { Debug.Log("El dinero no es suficiente para comprar este articulo"); /*tirar dialogo, sonido o aviso de que no es posible realizar la compra*/ }
     }
 
     //El numero de producto ("productNum") debe de coincidir con el boton del item
