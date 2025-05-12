@@ -11,7 +11,6 @@ public class Store : MonoBehaviour
     public PlayerMovement playerMovement;
     public UAIcoins uaiCoins;
 
-
     [Header("UI PANELS")]
     [SerializeField] GameObject storeUI;
     [SerializeField] GameObject descriptionPanel;
