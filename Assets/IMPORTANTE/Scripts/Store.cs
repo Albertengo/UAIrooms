@@ -38,18 +38,18 @@ public class Store : MonoBehaviour
  
     }
 
-    private void Update() // esto se debe de eliminar despues, es solo para probar si funciona la interfaz
-    {
-        if (Input.GetKeyDown(KeyCode.Z))
-        {
-            EnterStore();
-        }
+    //private void Update() // esto se debe de eliminar despues, es solo para probar si funciona la interfaz
+    //{
+    //    if (Input.GetKeyDown(KeyCode.Z))
+    //    {
+    //        EnterStore();
+    //    }
 
-        if (Input.GetKeyDown(KeyCode.X))
-        {
-            QuitStore();
-        }
-    }
+    //    if (Input.GetKeyDown(KeyCode.X))
+    //    {
+    //        QuitStore();
+    //    }
+    //}
 
 
     public void Buy()

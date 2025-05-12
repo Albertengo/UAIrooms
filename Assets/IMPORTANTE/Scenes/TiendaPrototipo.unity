@@ -930,6 +930,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 213438480}
+  - component: {fileID: 213438481}
+  - component: {fileID: 213438482}
   m_Layer: 0
   m_Name: RootCamera
   m_TagString: Untagged
@@ -952,6 +954,39 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1172663675}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &213438481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 213438479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88a8f12c451947d48bb16cf60506d682, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Origin: {fileID: 213438480}
+  hitRange: 3
+--- !u!114 &213438482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 213438479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f11106b5a685ce4f8f9788bfe63c483, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Interaction_Layer:
+    serializedVersion: 2
+    m_Bits: 64
+  Interaction_Input: {fileID: -446128100147733732, guid: 52b5c50932bca794bbee70643326c04d,
+    type: 3}
+  Detection: {fileID: 213438481}
+  Animator: {fileID: 0}
 --- !u!1 &249272707
 GameObject:
   m_ObjectHideFlags: 0
@@ -4123,7 +4158,7 @@ GameObject:
   - component: {fileID: 1057223023}
   - component: {fileID: 1057223022}
   - component: {fileID: 1057223021}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Store
   m_TagString: Untagged
   m_Icon: {fileID: 0}
