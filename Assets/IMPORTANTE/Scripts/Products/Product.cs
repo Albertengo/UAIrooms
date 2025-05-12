@@ -10,9 +10,9 @@ public class Product : MonoBehaviour
 {
     public GameObject productObject;
     public string productDescription;
-    public string name;
     public int initialStock;
     public int currentStock;
+    public string name;
     public int cost;
 
 
