@@ -1,3 +1,4 @@
+using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -6,8 +7,10 @@ using UnityEngine;
 public class Store : MonoBehaviour
 {
     [Header("OTHER SCRIPTS")]
+    public CinemachineInputProvider inputProvider;
     public PlayerMovement playerMovement;
     public UAIcoins uaiCoins;
+
 
     [Header("UI PANELS")]
     [SerializeField] GameObject storeUI;
@@ -30,12 +33,10 @@ public class Store : MonoBehaviour
         playerMovement = player.GetComponent<PlayerMovement>();
         uaiCoins = player.GetComponent<UAIcoins>();
 
+        ResetStocks();
         storeUI.SetActive(false);
         descriptionPanel.SetActive(false);
-        for (int i = 0; i < products.Count; i++) //poner en un metodo separado
-        {
-            products[i].currentStock = products[i].initialStock;
-        }  
+ 
     }
 
     private void Update() // esto se debe de eliminar despues, es solo para probar si funciona la interfaz
@@ -52,7 +53,6 @@ public class Store : MonoBehaviour
     }
 
 
-    //Los metodos que estan como publicos se llaman desde botones de la UI
     public void Buy()
     {
         Product newProduct = products[productNumber];
@@ -70,9 +70,8 @@ public class Store : MonoBehaviour
         else { Debug.Log("El dinero no es suficiente par comprar este articulo / No hay suficiente initialStock"); /*tirar dialogo, sonido o aviso de que no es posible realizar la compra*/ }
     }
 
-
-    //mwtodo aparte que actualice la informacion y que se llame desde buy, agregar parametro del tipo poduct o int, se van reemplaxando los textos e imagen, este boton modifica el numero del producto que se usa asi coincide con el de buy
-    public void UpdateDescriptionInformation(int productNum) //llamar desde los botones antes del buy
+    //El numero de producto ("productNum") debe de coincidir con el boton del item
+    public void UpdateDescriptionInformation(int productNum) 
     {
         Product newProduct = products[productNum];
 
@@ -84,11 +83,20 @@ public class Store : MonoBehaviour
         descriptionPanel.SetActive(true);
     }
 
+    private void ResetStocks()
+    {
+        for (int i = 0; i < products.Count; i++)
+        {
+            products[i].currentStock = products[i].initialStock;
+        }
+    }
+
 
 
     public void QuitStore()
     {
         StoreInteraction(false, CursorLockMode.Locked);
+        
     }
 
     public void EnterStore() //llamar este metodo cuando se toca un trigger o se interactua
@@ -103,6 +111,7 @@ public class Store : MonoBehaviour
         Cursor.visible = activeStoreUI;
         Cursor.lockState = cursorState;
 
-        playerMovement.canMove = !activeStoreUI; //camara debe de bloquearse, rotar y moverse hacia la tienda
+        inputProvider.enabled = !activeStoreUI;
+        playerMovement.canMove = !activeStoreUI; //mover lentamente el jugador hacia la tienda, rotar camara y bloquearla
     }
 }

@@ -2729,7 +2729,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0.03, z: 0}
 --- !u!114 &702138199
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4141,6 +4141,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe9fa43e5d57b95438d5c660448ccd36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inputProvider: {fileID: 18768468}
   playerMovement: {fileID: 1172663677}
   uaiCoins: {fileID: 1172663681}
   storeUI: {fileID: 99158992}

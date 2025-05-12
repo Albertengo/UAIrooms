@@ -8,14 +8,12 @@ using UnityEngine;
 
 public class Product : MonoBehaviour
 {
-    public string name;
-    public string productDescription;
     public GameObject productObject;
+    public string productDescription;
+    public string name;
     public int initialStock;
     public int currentStock;
     public int cost;
-
-    //public string productType; //puede ser un objeto a un evento como un dialogo ("object" - "event"), usar esto hace que sea menos expandible y mas sucio el codigo
 
 
     //hacer clases hijas con un mismo metodo para que cada producto tenga una forma de actuar distinta.
