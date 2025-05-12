@@ -8,6 +8,7 @@ namespace interfaz
         //lógica para los botones usados dentro del juego
         //[SerializeField] GameObject PanelCreditos;
         //[SerializeField] GameObject PanelOpciones;
+        [SerializeField] int Escena;
 
         public void Menu()
         {
@@ -17,7 +18,7 @@ namespace interfaz
         {
             //Prob vamos a tener q hacer algo asi desp asi q no lo saco x ahora -ori
             //PlayerPrefs.SetInt("MaxCombo", 0);
-            SceneManager.LoadScene("hola 1");//("Game");
+            SceneManager.LoadScene(Escena);//("Game");
             Time.timeScale = 1f;
         }
 
