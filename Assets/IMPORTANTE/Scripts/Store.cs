@@ -7,9 +7,8 @@ using UnityEngine;
 public class Store : MonoBehaviour
 {
     [Header("OTHER SCRIPTS")]
-    public CinemachineInputProvider inputProvider;
-    public PlayerMovement playerMovement;
     public UAIcoins uaiCoins;
+    public MovementManager movementManager;
 
     [Header("UI PANELS")]
     [SerializeField] GameObject storeUI;
@@ -24,12 +23,14 @@ public class Store : MonoBehaviour
     [SerializeField] List<Product> products;
     [SerializeField] int productNumber;
 
+    [SerializeField] Transform newPlayerPosition;
+    GameObject player;
+
 
 
     private void Start()
     {
-        GameObject player = GameObject.Find("Player");
-        playerMovement = player.GetComponent<PlayerMovement>();
+        player = GameObject.Find("Player");
         uaiCoins = player.GetComponent<UAIcoins>();
 
         ResetStocks();
@@ -38,18 +39,6 @@ public class Store : MonoBehaviour
  
     }
 
-    //private void Update() // esto se debe de eliminar despues, es solo para probar si funciona la interfaz
-    //{
-    //    if (Input.GetKeyDown(KeyCode.Z))
-    //    {
-    //        EnterStore();
-    //    }
-
-    //    if (Input.GetKeyDown(KeyCode.X))
-    //    {
-    //        QuitStore();
-    //    }
-    //}
 
 
     public void Buy()
@@ -67,7 +56,6 @@ public class Store : MonoBehaviour
         else if (newProduct.currentStock == 0)
             FindButtonProduct(newProduct.name);
     }
-
 
     public void UpdateDescriptionInformation(int productNum) 
     {
@@ -116,7 +104,7 @@ public class Store : MonoBehaviour
         Cursor.visible = activeStoreUI;
         Cursor.lockState = cursorState;
 
-        inputProvider.enabled = !activeStoreUI;
-        playerMovement.canMove = !activeStoreUI; //mover lentamente el jugador hacia la tienda, rotar camara y bloquearla
+        movementManager.CameraRotation(!activeStoreUI);
+        movementManager.ChangePlayerPostion(newPlayerPosition, !activeStoreUI);
     }
 }
