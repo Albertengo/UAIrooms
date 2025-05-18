@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - Floor
   - Spawner
+  - UAIcoin
   layers:
   - Default
   - TransparentFX
