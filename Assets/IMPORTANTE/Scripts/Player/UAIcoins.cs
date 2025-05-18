@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class UAIcoins : MonoBehaviour
 {
-    private int coins;
+    public int coins;
     public int Coins
     {
         get { return coins; }
@@ -44,5 +44,16 @@ public class UAIcoins : MonoBehaviour
     public void Tienda(int costo)
     {
         Coins = Coins - costo;
+    }
+
+    public void AddCoins(int CoinValue)
+    {
+        Coins = Coins + CoinValue;
+        DestroyCoin();
+    }
+
+    void DestroyCoin()
+    {
+        Destroy(this.gameObject);
     }
 }

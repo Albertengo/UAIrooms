@@ -16,6 +16,7 @@ public class DetectionRange_2 : MonoBehaviour
             //hit.collider.GetComponent<Enemies>()?.recibirDaño(); //acá lo cambiamos con una funcion q se tenga de NPC para activar dialogo o agarrar objeto
             hit.collider.GetComponent<RunDialogue>()?.Dialogue();
             hit.collider.GetComponent<Store>()?.EnterStore();
+            hit.collider.GetComponent<CoinInteraction>()?.AddCoins();
             //GetComponent<PlayerAttack>().detected = true;
             Debug.Log("Interactuando");
         }
