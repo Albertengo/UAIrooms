@@ -10,6 +10,7 @@ public class Sanity : MonoBehaviour
     [SerializeField] float min;
 
     private bool reduceSanity = false;
+    public float regenerationSpeed;
     public PlayerMovement playerMovement;
 
 
@@ -33,7 +34,7 @@ public class Sanity : MonoBehaviour
         }
         else
         {
-            sanitySlider.value += Time.deltaTime;
+            sanitySlider.value += Time.deltaTime * regenerationSpeed;
             playerMovement.speed = Mathf.Min(10, playerMovement.speed + Time.deltaTime); //aumenta el valor de speed y hace que no se pase de 10
         }
     }

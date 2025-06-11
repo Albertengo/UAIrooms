@@ -6,6 +6,8 @@ using UnityEngine;
 
 public class Store : MonoBehaviour
 {
+    //DIVIDIR SCRIPT EN DOS PARTES, UNO PARA UI Y OTRO PARA FUNCIONAMIENTO
+
     [Header("OTHER SCRIPTS")]
     public UAIcoins uaiCoins;
     public MovementManager movementManager;
@@ -39,7 +41,7 @@ public class Store : MonoBehaviour
  
     }
 
-    private void Update()
+    private void Update() // ESTO DESPUES SE TIENE QUE ELIMINAR, SOLO SIRVE PARA PROBAR LA TIENDA
     {
         if (Input.GetKeyDown(KeyCode.Z))
         {
