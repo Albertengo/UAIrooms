@@ -39,6 +39,18 @@ public class Store : MonoBehaviour
  
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            EnterStore();
+        }
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            QuitStore();
+        }
+    }
+
 
 
     public void Buy()
@@ -105,6 +117,6 @@ public class Store : MonoBehaviour
         Cursor.lockState = cursorState;
 
         movementManager.CameraRotation(!activeStoreUI);
-        movementManager.ChangePlayerPostion(newPlayerPosition, !activeStoreUI);
+        movementManager.ChangePlayerPostion(!activeStoreUI);
     }
 }

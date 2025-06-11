@@ -2,20 +2,19 @@ using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class MovementManager : MonoBehaviour
 {
-    // metodo para mover suavemente la camara,
-    //vuelve a la normalidad despues
-    //metodo para mover lentamente al jugador
-
-    public CinemachineVirtualCamera virtualCamera;
-    private CinemachinePOV pov;
+    [Header("SCRIPTS")]
     public CinemachineInputProvider inputProvider;
     public PlayerMovement playerMovement;
 
+    [Header("CAMERAS")]
+    [SerializeField] Camera storeCamera;
+    [SerializeField] GameObject mainCamera;
+
     GameObject player;
+    [SerializeField] float speed;
 
 
     private void Start()
@@ -23,22 +22,35 @@ public class MovementManager : MonoBehaviour
         player = GameObject.Find("Player");
         playerMovement = player.GetComponent<PlayerMovement>();
 
-        pov = virtualCamera.GetCinemachineComponent<CinemachinePOV>();
+        storeCamera.enabled = false;
+    }
+
+    private void Update()
+    {
+        if (Vector3.Distance(player.transform.position, storeCamera.transform.position) > 0.1f && !playerMovement.canMove)
+            player.transform.position = Vector3.Lerp(player.transform.position,storeCamera.transform.position, Time.deltaTime * speed);
     }
 
 
-    public void ChangePlayerPostion(Transform newTransform, bool canMove)
+    public void ChangePlayerPostion(bool canMove)
     {
         playerMovement.canMove = canMove;
-        player.transform.Translate(newTransform.position);
     }
 
-    public void CameraRotation(bool blockCamera)
+    public void CameraRotation(bool canChangeCamera)
     {
+        if (canChangeCamera)
+        {
+            ChangeCameraPriority(10, 0, true);
+        }
+        else
+            ChangeCameraPriority(0, 10, false);
+    }
+
+    void ChangeCameraPriority(int mainCameraPriority, int storeCameraPriority, bool blockCamera)
+    {
+        mainCamera.GetComponent<CinemachineVirtualCamera>().Priority = mainCameraPriority;
+        storeCamera.GetComponent<CinemachineVirtualCamera>().Priority = storeCameraPriority;
         inputProvider.enabled = blockCamera;
-
-        //Mathf.LerpAngle
-
-
     }
 }
