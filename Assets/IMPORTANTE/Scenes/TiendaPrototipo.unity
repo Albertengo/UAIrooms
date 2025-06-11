@@ -2199,7 +2199,7 @@ MonoBehaviour:
   - m_Script
   m_LockStageInInspector: 
   m_StreamingVersion: 20170927
-  m_Priority: 8
+  m_Priority: 0
   m_StandbyUpdate: 2
   m_LookAt: {fileID: 1057223025}
   m_Follow: {fileID: 1057223025}
@@ -5111,11 +5111,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44f007c068fd3094499f9c7e205b4cc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  virtualCamera: {fileID: 18768466}
   inputProvider: {fileID: 18768468}
   playerMovement: {fileID: 1172663677}
   storeCamera: {fileID: 589323640}
   mainCamera: {fileID: 18768465}
+  speed: 1.5
 --- !u!1 &1172663671
 GameObject:
   m_ObjectHideFlags: 0
