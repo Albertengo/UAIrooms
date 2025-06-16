@@ -24,7 +24,8 @@ public class UAIcoins : MonoBehaviour
         }*/
 
         
-        Coins = 10;
+        Coins = 0;
+
         ShowCoins();
     }
     /*void Update()
@@ -49,11 +50,12 @@ public class UAIcoins : MonoBehaviour
     public void AddCoins(int CoinValue)
     {
         Coins = Coins + CoinValue;
-        DestroyCoin();
+        ShowCoins();
+        //DestroyCoin();
     }
 
-    void DestroyCoin()
-    {
-        Destroy(this.gameObject);
-    }
+    //void DestroyCoin()
+    //{
+    //    Destroy(this.gameObject);
+    //}
 }

@@ -16,13 +16,24 @@ public class CoinInteraction : MonoBehaviour
         Debug.Log(PlayerCoins.coins);
     }
     */
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            AddCoins();
+        }
+    }
+
+
     public void AddCoins()
     {
         PlayerCoins.AddCoins(1);
+        Debug.Log("moneda recolectada");
+        DestroyCoin(); 
     }
 
     void DestroyCoin()
     {
-        Destroy(this.gameObject);
-    }
+        Destroy(this.gameObject); 
+}
 }
