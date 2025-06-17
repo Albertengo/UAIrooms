@@ -13,9 +13,14 @@ public class Sanity : MonoBehaviour
     public float regenerationSpeed;
     public PlayerMovement playerMovement;
 
+    public int sanity
+    {
+        get { return Mathf.RoundToInt(sanitySlider.value); }
+        set { sanitySlider.value = value; }
+    }
 
 
-    private void Start()
+private void Start()
     {
         SetSanitySliderValues();
         playerMovement = GetComponent<PlayerMovement>();
