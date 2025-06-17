@@ -8,14 +8,32 @@ public class Peek : MonoBehaviour
     //que solo se reproduzca cuando estás quieto, si no, no (para evitar bugs)
     
     // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
+    public Animator cameraAnimator;
+    public Transform player;
+    public float stopThreshold = 0.1f;
+    public Rigidbody playerRB;
+
     void Update()
     {
-        
+       
+        if (IsPlayerStill())
+        {
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+                cameraAnimator.SetTrigger("LeanLeft");
+            }
+            else if (Input.GetKeyDown(KeyCode.E))
+            {
+                cameraAnimator.SetTrigger("LeanRight");
+            }
+        }
+    }
+
+    bool IsPlayerStill()
+    {
+        return playerRB.velocity.magnitude < stopThreshold;
     }
 }
+
+
