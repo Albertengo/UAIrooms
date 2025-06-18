@@ -4937,7 +4937,7 @@ PrefabInstance:
     - target: {fileID: 3068431297717554894, guid: 69db2ff2efc617b448c91f71079ddb91,
         type: 3}
       propertyPath: m_Speed
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3068431297717554894, guid: 69db2ff2efc617b448c91f71079ddb91,
         type: 3}
@@ -4948,6 +4948,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AngularSpeed
       value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 3791918373986341227, guid: 69db2ff2efc617b448c91f71079ddb91,
+        type: 3}
+      propertyPath: followPlayer
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7366390229822622371, guid: 69db2ff2efc617b448c91f71079ddb91,
         type: 3}
