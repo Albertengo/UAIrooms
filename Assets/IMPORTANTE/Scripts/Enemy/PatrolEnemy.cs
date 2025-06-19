@@ -34,42 +34,44 @@ public class PatrolEnemy : MonoBehaviour
     //        targetPoint = 0;
     //    }
     //}
-    [SerializeField] NavMeshAgent navMeshAgent;
-    [SerializeField] private Transform[] waypoints;
-    [SerializeField] private float waitTime = 2f;
-    [SerializeField] private float stoppingDistance = 0.5f;
+    public Transform[] waypoints;         // Lista de puntos de patrulla
+    public float waitTime = 2f;           // Tiempo de espera en cada punto
 
-    private int currentWaypoint = 0;
- 
+    private NavMeshAgent agent;           // Referencia al NavMeshAgent
+    private int currentWaypoint = 0;      // Índice del waypoint actual
+    private bool isWaiting = false;       // Estado de espera
 
-
-    public void Patrol()
+    void Start()
     {
-      
+        agent = GetComponent<NavMeshAgent>();
 
-        if (Vector3.Distance(transform.position, waypoints[currentWaypoint].position) > stoppingDistance)
+        if (waypoints.Length > 0)
         {
-            navMeshAgent.destination = waypoints[currentWaypoint].position;
-            Debug.Log("moviendose");
-        }
-        else
-        {
-            StartCoroutine(Wait());
+            agent.SetDestination(waypoints[currentWaypoint].position);
         }
     }
 
-    IEnumerator Wait()
+    public void Move()
     {
-     
+        if (!isWaiting && !agent.pathPending && agent.remainingDistance <= agent.stoppingDistance)
+        {
+            StartCoroutine(WaitAndMove());
+        }
+    }
+
+    IEnumerator WaitAndMove()
+    {
+        isWaiting = true;
+
         yield return new WaitForSeconds(waitTime);
 
-        currentWaypoint++;
+        // Avanza al siguiente waypoint
+        currentWaypoint = (currentWaypoint + 1) % waypoints.Length;
 
+        // Mover al siguiente destino
+        agent.SetDestination(waypoints[currentWaypoint].position);
 
-        if (currentWaypoint >= waypoints.Length)
-        {
-            currentWaypoint = 0;
-        }
+        isWaiting = false;
     }
 }
 

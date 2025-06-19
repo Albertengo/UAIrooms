@@ -43,7 +43,7 @@ public class EnemyMovement : MonoBehaviour
                 FollowPlayer();
             }
             else
-                gameObject.GetComponent<PatrolEnemy>().Patrol();
+                gameObject.GetComponent<PatrolEnemy>().Move();
         }
     }
 
