@@ -50,6 +50,7 @@ public class PatrolEnemy : MonoBehaviour
         if (Vector3.Distance(transform.position, waypoints[currentWaypoint].position) > stoppingDistance)
         {
             navMeshAgent.destination = waypoints[currentWaypoint].position;
+            Debug.Log("moviendose");
         }
         else
         {
@@ -63,6 +64,7 @@ public class PatrolEnemy : MonoBehaviour
         yield return new WaitForSeconds(waitTime);
 
         currentWaypoint++;
+
 
         if (currentWaypoint >= waypoints.Length)
         {

@@ -44,7 +44,6 @@ public class EnemyMovement : MonoBehaviour
             }
             else
                 gameObject.GetComponent<PatrolEnemy>().Patrol();
-            Debug.Log("Patrolling...");
         }
     }
 
