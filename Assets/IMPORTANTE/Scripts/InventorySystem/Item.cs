@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
-using Yarn.Unity.ActionAnalyser;
+//using Yarn.Unity.ActionAnalyser;
 
 [CreateAssetMenu(menuName = "Scriptable object/Item")]
 public class Item : ScriptableObject 
@@ -25,7 +25,7 @@ public enum ItemType
     Tool
 }
 
-public enum ActionTyoe
+public enum ActionType
 {
     Dig,
     Mine
