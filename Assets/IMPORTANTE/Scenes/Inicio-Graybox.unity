@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2148,7 +2148,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 209447115}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -5694,7 +5694,7 @@ RectTransform:
   m_GameObject: {fileID: 511912799}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2120177014}
@@ -5703,7 +5703,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -187, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &511912801
@@ -6194,7 +6194,7 @@ Transform:
   m_GameObject: {fileID: 589323637}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.014026119, y: 0.11702224, z: -2.8044348}
+  m_LocalPosition: {x: -0.014026119, y: 0.11702223, z: -2.8044317}
   m_LocalScale: {x: 0.34944525, y: 0.45008552, z: 0.41670725}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -9964,7 +9964,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 941778673}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -11360,7 +11360,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: a7e041407bbd23848b2c90dd3c9e6bdf, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -11399,7 +11399,7 @@ Transform:
   m_GameObject: {fileID: 1057223020}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -45.20986, y: 0.24000001, z: -36.068012}
+  m_LocalPosition: {x: -45.20986, y: 0.24000001, z: -166.6}
   m_LocalScale: {x: 2.8616784, y: 2.2217999, z: 2.3997662}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -13538,8 +13538,8 @@ Transform:
   m_GameObject: {fileID: 1232090418}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 27.11, y: 0.34, z: -196.32}
-  m_LocalScale: {x: 5.8261, y: 1, z: 6.6342936}
+  m_LocalPosition: {x: 5.92, y: 0.34, z: -194.82}
+  m_LocalScale: {x: 5.8261, y: 1, z: 8.034793}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -15109,7 +15109,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1486439421}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -17009,6 +17009,7 @@ RectTransform:
   - {fileID: 1511922083}
   - {fileID: 169836230}
   - {fileID: 414433851}
+  - {fileID: 1810168798}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -17605,17 +17606,17 @@ RectTransform:
   m_GameObject: {fileID: 1810168797}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.40125, y: 1.40125, z: 1.40125}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1934919294}
   - {fileID: 1481077111}
   - {fileID: 385943932}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1732148236}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 560.5, y: 348}
+  m_AnchoredPosition: {x: 0, y: -0.71365356}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1814673449
@@ -21886,7 +21887,6 @@ SceneRoots:
   - {fileID: 1754024032}
   - {fileID: 676590657}
   - {fileID: 1732148236}
-  - {fileID: 1810168798}
   - {fileID: 99158996}
   - {fileID: 668894840}
   - {fileID: 375750249}
