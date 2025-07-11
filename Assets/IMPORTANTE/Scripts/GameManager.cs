@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Yarn.Unity;
 
 public class GameManager : MonoBehaviour
 {
@@ -13,7 +14,7 @@ public class GameManager : MonoBehaviour
     [Header("PAUSE")]
     [SerializeField] GameObject pauseMenu;
     private bool isPaused = false;
-
+    public DialogueRunner dialogueRunner;
 
 
     void Awake()
@@ -39,6 +40,7 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         PauseGame();
+        ContinueDialogue();
     }
 
 
@@ -61,6 +63,13 @@ public class GameManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
     }
 
+
+    void ContinueDialogue()
+    {
+        if (Input.GetKeyDown(KeyCode.Space) && dialogueRunner.IsDialogueRunning)
+            dialogueRunner.ContinueDialogue();
+        //cancelar salto
+    }
 
 
     void PauseGame()

@@ -12639,6 +12639,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SceneNumber: 1
   pauseMenu: {fileID: 1511922080}
+  dialogueRunner: {fileID: 1863145805}
 --- !u!4 &1150417756
 Transform:
   m_ObjectHideFlags: 0
@@ -18572,6 +18573,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1861674394}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1863145805 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3579681405068720530, guid: 7f29e5f7ffdea4a6793cefb278b61f0c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1271949983}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bec29c0a230741bdac901dba8da47ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1864388154
 GameObject:
   m_ObjectHideFlags: 0
