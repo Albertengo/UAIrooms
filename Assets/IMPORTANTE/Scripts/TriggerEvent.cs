@@ -12,6 +12,7 @@ public class TriggerEvent : MonoBehaviour
     [SerializeField] string eventName;
 
 
+
     private void OnTriggerEnter(Collider other) 
         
     { 

@@ -67,7 +67,10 @@ public class GameManager : MonoBehaviour
     void ContinueDialogue()
     {
         if (Input.GetKeyDown(KeyCode.Space) && dialogueRunner.IsDialogueRunning)
-            dialogueRunner.ContinueDialogue();
+        {
+
+        }
+            //dialogueRunner.ContinueDialogue();
         //cancelar salto
     }
 
