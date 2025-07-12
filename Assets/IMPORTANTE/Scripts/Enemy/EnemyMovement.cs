@@ -19,6 +19,10 @@ public class EnemyMovement : MonoBehaviour
 
     private bool canDamage = true;
     public float cooldownTime = 5f;
+    private bool isPlayerHidden = false;
+
+    private PatrolEnemy patrolScript;
+
 
     [Header("NavMesh")]
     [SerializeField] NavMeshAgent navMeshAgent;
@@ -28,13 +32,15 @@ public class EnemyMovement : MonoBehaviour
     void Start()
     {
         playerTransform = FindObjectOfType<PlayerMovement>().transform;
+        patrolScript = GetComponent<PatrolEnemy>();
+
         //playerHealth = FindObjectOfType<PlayerHealth>();
         //animator = GetComponent<Animator>();
     }
 
     void Update()
     {
-        if (!isHit)
+        if (!isHit && !isPlayerHidden)
         {
             float distanceToPlayer = Vector3.Distance(transform.position, playerTransform.position);
 
@@ -42,52 +48,58 @@ public class EnemyMovement : MonoBehaviour
             {
                 FollowPlayer();
             }
-            //else
-                //gameObject.GetComponent<PatrolEnemy>().Move();
+        }
+        else if (patrolScript != null)
+        {
+            patrolScript.Move();
         }
     }
 
     public void FollowPlayer()
     {
         navMeshAgent.destination = playerTransform.position;
-        //animator.SetBool("EnemyRun", true);
+    }
+
+    public void StopChasingAndWait()
+    {
+        followPlayer = false;
+        isPlayerHidden = true;
+        navMeshAgent.ResetPath(); // Detiene al enemigo
+        navMeshAgent.isStopped = true;
+    }
+
+    public void ResumePatrolling()
+    {
+        isPlayerHidden = false;
+        followPlayer = false;
+        navMeshAgent.isStopped = false;
+
+        if (patrolScript != null)
+        {
+            patrolScript.Move(); // Comienza a patrullar
+        }
     }
 
     void OnCollisionEnter(Collision collision)
     {
-
         if (collision.gameObject.CompareTag("Player"))
         {
-            //if (playerHealth != null && canDamage)
-            //{
-            //    playerHealth.TakeDamage();
-                StartCoroutine(EnableDamageAfterCooldown());
-
-                //playerAudioSource.PlayOneShot(enemyHitSound);
-            //}
-
-            //animator.SetBool("EnemyRun", false);
+            StartCoroutine(EnableDamageAfterCooldown());
             StartCoroutine(StunEnemy());
         }
     }
 
-
-
     IEnumerator StunEnemy()
     {
         isHit = true;
-
         yield return new WaitForSeconds(5f);
-
         isHit = false;
     }
 
     IEnumerator EnableDamageAfterCooldown()
     {
         canDamage = false;
-
         yield return new WaitForSeconds(cooldownTime);
-
         canDamage = true;
     }
 }

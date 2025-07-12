@@ -9,6 +9,7 @@ TagManager:
   - Floor
   - Spawner
   - UAIcoin
+  - Waypoint
   layers:
   - Default
   - TransparentFX

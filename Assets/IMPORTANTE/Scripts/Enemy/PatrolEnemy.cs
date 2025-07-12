@@ -45,11 +45,21 @@ public class PatrolEnemy : MonoBehaviour
     {
         agent = GetComponent<NavMeshAgent>();
 
+       
+        GameObject[] waypointObjects = GameObject.FindGameObjectsWithTag("Waypoint");
+        waypoints = new Transform[waypointObjects.Length];
+
+        for (int i = 0; i < waypointObjects.Length; i++)
+        {
+            waypoints[i] = waypointObjects[i].transform;
+        }
+
         if (waypoints.Length > 0)
         {
             agent.SetDestination(waypoints[currentWaypoint].position);
         }
     }
+
 
     public void Move()
     {
