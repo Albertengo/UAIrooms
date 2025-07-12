@@ -7,6 +7,11 @@ public class DoorTrigger : MonoBehaviour
     private bool playerInside = false;
     private bool enemySpawned = false;
 
+    [Header("Puerta desbloqueable")]
+    //public Animator doorAnimator;
+    public Collider doorCollider; // Collider que bloquea el paso
+    private bool isUnlocked = false;
+
     void Update()
     {
         if (playerInside && !enemySpawned && Input.GetKeyDown(KeyCode.F))
@@ -43,5 +48,24 @@ public class DoorTrigger : MonoBehaviour
         {
             Debug.LogWarning("Falta asignar el prefab del enemigo o el punto de spawn.");
         }
+    }
+
+    public void UnlockDoor()
+    {
+        if (isUnlocked) return;
+
+        isUnlocked = true;
+
+        //if (doorAnimator != null)
+        //{
+        //    doorAnimator.SetTrigger("Open");
+        //}
+
+        if (doorCollider != null)
+        {
+            doorCollider.enabled = false;
+        }
+
+        Debug.Log("Puerta desbloqueada");
     }
 }
