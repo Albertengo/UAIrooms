@@ -8,6 +8,11 @@ public class DetectionRange_2 : MonoBehaviour
     RaycastHit hit;
     public float hitRange;
 
+    private void Start()
+    {
+        //Debug.DrawRay(Origin.position, Origin.forward * hitRange, Color.red, 2f);
+
+    }
     public void InteractionInRange()
     {
         Debug.Log("Hay un interactuable");
@@ -21,4 +26,12 @@ public class DetectionRange_2 : MonoBehaviour
             Debug.Log("Interactuando");
         }
     }
+
+    //void OnDrawGizmos()
+    //{
+    //    if (Origin == null) return;
+    //    Gizmos.color = Color.red;
+    //    Gizmos.DrawRay(Origin.position, Origin.forward * hitRange);
+    //}
+
 }
