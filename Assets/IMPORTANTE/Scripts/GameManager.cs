@@ -40,7 +40,7 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         PauseGame();
-        ContinueDialogue();
+        //ContinueDialogue();
     }
 
 
@@ -64,15 +64,15 @@ public class GameManager : MonoBehaviour
     }
 
 
-    void ContinueDialogue()
-    {
-        if (Input.GetKeyDown(KeyCode.Space) && dialogueRunner.IsDialogueRunning)
-        {
+    //void ContinueDialogue()
+    //{
+    //    if (Input.GetKeyDown(KeyCode.Space) && dialogueRunner.IsDialogueRunning)
+    //    {
 
-        }
-            //dialogueRunner.ContinueDialogue();
-        //cancelar salto
-    }
+    //    }
+    //        //dialogueRunner.ContinueDialogue();
+    //    //cancelar salto
+    //}
 
 
     void PauseGame()

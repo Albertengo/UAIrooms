@@ -8,7 +8,7 @@ public class UnlockedDoor : MonoBehaviour
     //public float delayToDisable = 1.5f;
 
     private bool isNear = false;
-    private bool doorOpened = false;
+    public bool doorOpened = false;
     public bool requiresKey = false;
 
     void Update()
