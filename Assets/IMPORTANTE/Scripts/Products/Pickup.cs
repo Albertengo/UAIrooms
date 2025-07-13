@@ -9,6 +9,7 @@ public class Pickup : MonoBehaviour
     public UnityEvent onKeyPickup;
 
     private bool isPlayerNear = false;
+    public bool hasKey = false;
 
     void Update()
     {
@@ -16,6 +17,7 @@ public class Pickup : MonoBehaviour
         {
             onKeyPickup.Invoke(); // Evento al recoger llave
             keyObject.SetActive(false); // Ocultar la llave
+            hasKey = true;
             Debug.Log("Llave recogida.");
         }
     }

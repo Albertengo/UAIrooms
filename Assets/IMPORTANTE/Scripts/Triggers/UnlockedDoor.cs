@@ -4,37 +4,49 @@ using UnityEngine;
 
 public class UnlockedDoor : MonoBehaviour
 {
-    //public Animator doorAnimator;
-    public float delayToDisable = 1.5f; 
+    public Collider doorCollider;
+    //public float delayToDisable = 1.5f;
+
     private bool isNear = false;
     private bool doorOpened = false;
+    public bool requiresKey = false;
 
     void Update()
     {
         if (isNear && !doorOpened && Input.GetKeyDown(KeyCode.F))
         {
-        /*    doorAnimator.SetTrigger("Open")*/;
             doorOpened = true;
-            Invoke("DisableDoor", delayToDisable);
+            DisableDoorCollider();
 
         }
     }
 
-    private void DisableDoor()
+    private void DisableDoorCollider()
     {
-        gameObject.SetActive(false);
+        if (doorCollider != null)
+        {
+            doorCollider.enabled = false;
+            Debug.Log("Puerta desbloqueada, collider desactivado");
+        }
+        else
+        {
+            Debug.LogWarning("No se asignó el collider de la puerta");
+        }
     }
-
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
+        {
             isNear = true;
+        }
     }
 
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player"))
+        {
             isNear = false;
+        }
     }
 }

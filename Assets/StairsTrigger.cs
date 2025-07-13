@@ -2,21 +2,26 @@ using UnityEngine;
 
 public class StairsTrigger : MonoBehaviour
 {
-
     public Transform teleportPoint;
-    private bool triggered = false;
+    public float cooldownTime = 1f;
 
-
-
+    private bool isInside = false;
+    private static bool isInCooldown = false; 
 
     private void OnTriggerEnter(Collider other)
     {
-        if (triggered) return;
+        if (other.CompareTag("Player") && !isInside && !isInCooldown)
+        {
+            isInside = true;
+            TeleportPlayer(other.gameObject);
+        }
+    }
 
+    private void OnTriggerExit(Collider other)
+    {
         if (other.CompareTag("Player"))
         {
-            triggered = true;
-            TeleportPlayer(other.gameObject);
+            isInside = false;
         }
     }
 
@@ -24,12 +29,20 @@ public class StairsTrigger : MonoBehaviour
     {
         if (teleportPoint != null)
         {
+            isInCooldown = true;
             player.transform.position = teleportPoint.position;
-            Debug.Log("se teletransporto al primer piso");
+            Debug.Log("Se teletransportó");
+
+            Invoke(nameof(ResetCooldown), cooldownTime);
         }
         else
         {
-            Debug.LogWarning("el punto de teletransporte no esta asignado");
+            Debug.LogWarning("No se asignó el punto de teletransporte");
         }
+    }
+
+    void ResetCooldown()
+    {
+        isInCooldown = false;
     }
 }
