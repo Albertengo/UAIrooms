@@ -18,19 +18,13 @@ public class Note : MonoBehaviour
                     CloseNote();
             }
         }
-
-        // También permitir cerrar con Escape
-        if (isNoteOpen && Input.GetKeyDown(KeyCode.Escape))
-        {
-            CloseNote();
-        }
     }
 
     private void OpenNote()
     {
         noteUI.SetActive(true);
         isNoteOpen = true;
-        Time.timeScale = 0f; // Pausa el juego si querés
+        Time.timeScale = 0f;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
     }
@@ -39,9 +33,12 @@ public class Note : MonoBehaviour
     {
         noteUI.SetActive(false);
         isNoteOpen = false;
-        Time.timeScale = 1f; // Reanuda el juego
+        Time.timeScale = 1f; 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        FindObjectOfType<DoorTrigger>().SetInteractionComplete();
+
+
     }
 
     private void OnTriggerEnter(Collider other)

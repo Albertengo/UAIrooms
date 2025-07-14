@@ -12,6 +12,17 @@ public class DoorTrigger : MonoBehaviour
     public Collider doorCollider; // Collider que bloquea el paso
     private bool isUnlocked = false;
 
+    public GameObject exitPanel;
+
+    private bool endTriggered = false;
+    private bool sawNote = false;
+
+    void Start()
+    {
+            exitPanel.SetActive(false);
+    }
+
+
     void Update()
     {
         if (playerInside && !enemySpawned && Input.GetKeyDown(KeyCode.F))
@@ -30,9 +41,10 @@ public class DoorTrigger : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && enemySpawned && sawNote && !endTriggered)
         {
             playerInside = false;
+            ShowExitPanel();
         }
     }
 
@@ -68,4 +80,20 @@ public class DoorTrigger : MonoBehaviour
 
         Debug.Log("Puerta desbloqueada");
     }
+    void ShowExitPanel()
+    {
+        if (exitPanel != null)
+        {
+            exitPanel.SetActive(true);
+            Time.timeScale = 0f; // Pausa el juego
+            endTriggered = true;
+            Debug.Log("demo terminada");
+        }
+    }
+    public void SetInteractionComplete()
+    {
+        sawNote = true;
+        Debug.Log("vio la nota");
+    }
 }
+
