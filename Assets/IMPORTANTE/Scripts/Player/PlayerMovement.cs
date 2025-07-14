@@ -37,7 +37,7 @@ public class PlayerMovement : MonoBehaviour
         if (canMove)
         {
             MovePlayer();
-            Jump();
+            //Jump();
             Run();
         }
     }

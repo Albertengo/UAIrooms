@@ -43,10 +43,12 @@ public class Store : MonoBehaviour
 
     private void Update() // ESTO DESPUES SE TIENE QUE ELIMINAR, SOLO SIRVE PARA PROBAR LA TIENDA
     {
-        if (Input.GetKeyDown(KeyCode.Z))
-        {
-            EnterStore();
-        }
+        
+        //if (Input.GetKeyDown(KeyCode.Z))
+        //{
+        //    E
+        //    nterStore();
+        //}
         if (Input.GetKeyDown(KeyCode.X))
         {
             QuitStore();

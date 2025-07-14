@@ -6,7 +6,8 @@ using Yarn.Unity;
 public class RunDialogue : MonoBehaviour
 {
     // a reference to the "press e to start" label
-    [SerializeField] GameObject helpOverlay;
+    //[SerializeField] GameObject helpOverlay;
+    [SerializeField] string StartNode;
 
     public void Dialogue()
     {
@@ -15,8 +16,8 @@ public class RunDialogue : MonoBehaviour
         {
             if (!runner.IsDialogueRunning)
             {
-                helpOverlay.SetActive(false);
-                runner.StartDialogue("Start");
+                //helpOverlay.SetActive(false);
+                runner.StartDialogue(StartNode);
             }
         }
     }
