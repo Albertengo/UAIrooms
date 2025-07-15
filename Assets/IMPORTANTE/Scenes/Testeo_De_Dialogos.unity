@@ -1486,25 +1486,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 231556767095033119, guid: 81ac50448dd020340a4047f8ddfbafe2,
+    - target: {fileID: 782191268715073834, guid: 81ac50448dd020340a4047f8ddfbafe2,
         type: 3}
-      propertyPath: m_Materials.Array.data[0]
+      propertyPath: waypoints.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 76da358f4cc3d2644b58091520944e0b, type: 2}
-    - target: {fileID: 3338587292063754984, guid: 81ac50448dd020340a4047f8ddfbafe2,
+      objectReference: {fileID: 941778677}
+    - target: {fileID: 782191268715073834, guid: 81ac50448dd020340a4047f8ddfbafe2,
         type: 3}
-      propertyPath: detectionDistance
-      value: 25
-      objectReference: {fileID: 0}
+      propertyPath: waypoints.Array.data[1]
+      value: 
+      objectReference: {fileID: 1486439425}
+    - target: {fileID: 782191268715073834, guid: 81ac50448dd020340a4047f8ddfbafe2,
+        type: 3}
+      propertyPath: waypoints.Array.data[2]
+      value: 
+      objectReference: {fileID: 209447119}
     - target: {fileID: 4911017350158702222, guid: 81ac50448dd020340a4047f8ddfbafe2,
         type: 3}
       propertyPath: m_Name
       value: Enemy 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5626158018016652608, guid: 81ac50448dd020340a4047f8ddfbafe2,
-        type: 3}
-      propertyPath: m_Speed
-      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7887016565574170344, guid: 81ac50448dd020340a4047f8ddfbafe2,
         type: 3}
@@ -1524,7 +1524,7 @@ PrefabInstance:
     - target: {fileID: 7887016565574170344, guid: 81ac50448dd020340a4047f8ddfbafe2,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 7887016565574170344, guid: 81ac50448dd020340a4047f8ddfbafe2,
         type: 3}
@@ -1534,7 +1534,7 @@ PrefabInstance:
     - target: {fileID: 7887016565574170344, guid: 81ac50448dd020340a4047f8ddfbafe2,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 7887016565574170344, guid: 81ac50448dd020340a4047f8ddfbafe2,
         type: 3}
@@ -1549,7 +1549,7 @@ PrefabInstance:
     - target: {fileID: 7887016565574170344, guid: 81ac50448dd020340a4047f8ddfbafe2,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: -90
       objectReference: {fileID: 0}
     - target: {fileID: 7887016565574170344, guid: 81ac50448dd020340a4047f8ddfbafe2,
         type: 3}
@@ -1559,11 +1559,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4911017350158702222, guid: 81ac50448dd020340a4047f8ddfbafe2,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 220920853}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 81ac50448dd020340a4047f8ddfbafe2, type: 3}
 --- !u!1 &118862595
 GameObject:
@@ -2552,29 +2548,6 @@ MonoBehaviour:
     type: 3}
   Detection: {fileID: 213438481}
   Animator: {fileID: 0}
---- !u!1 &220920852 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4911017350158702222, guid: 81ac50448dd020340a4047f8ddfbafe2,
-    type: 3}
-  m_PrefabInstance: {fileID: 114444129}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &220920853
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 220920852}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 87c43a9975e5d7543820e4eb9f08bdb6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  waypoints:
-  - {fileID: 941778677}
-  - {fileID: 1486439425}
-  - {fileID: 209447119}
-  waitTime: 0.2
 --- !u!1 &228570414
 GameObject:
   m_ObjectHideFlags: 0
@@ -19410,6 +19383,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3bf61783a29a6b4181395aaefc6f8d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  items: []
+  slots: []
 --- !u!114 &1934919296
 MonoBehaviour:
   m_ObjectHideFlags: 0
