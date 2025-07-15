@@ -1,52 +1,42 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class UnlockedDoor : MonoBehaviour
 {
-    public Collider doorCollider;
-    //public float delayToDisable = 1.5f;
+    public Collider doorCollider;       
+    public GameObject doorVisual;      
 
     private bool isNear = false;
-    public bool doorOpened = false;
-    public bool requiresKey = false;
+    private bool doorOpened = false;
 
     void Update()
     {
         if (isNear && !doorOpened && Input.GetKeyDown(KeyCode.F))
         {
             doorOpened = true;
-            DisableDoorCollider();
-
+            UnlockDoor();
         }
     }
 
-    private void DisableDoorCollider()
+    private void UnlockDoor()
     {
         if (doorCollider != null)
-        {
             doorCollider.enabled = false;
-            Debug.Log("Puerta desbloqueada, collider desactivado");
-        }
-        else
-        {
-            Debug.LogWarning("No se asignó el collider de la puerta");
-        }
+
+        if (doorVisual != null)
+            doorVisual.SetActive(false); 
+
+        Debug.Log("Puerta desbloqueada y oculta.");
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
-        {
             isNear = true;
-        }
     }
 
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player"))
-        {
             isNear = false;
-        }
     }
 }
