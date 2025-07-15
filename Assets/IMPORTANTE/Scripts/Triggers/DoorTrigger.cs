@@ -12,10 +12,13 @@ public class DoorTrigger : MonoBehaviour
     public Collider doorCollider; // Collider que bloquea el paso
     private bool isUnlocked = false;
 
+    public Cutscene unlockCinematic;
+
     public GameObject exitPanel;
 
     private bool endTriggered = false;
     private bool sawNote = false;
+
 
     void Start()
     {
@@ -79,6 +82,7 @@ public class DoorTrigger : MonoBehaviour
         }
 
         Debug.Log("Puerta desbloqueada");
+     
     }
     void ShowExitPanel()
     {
