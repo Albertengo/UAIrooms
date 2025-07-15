@@ -38,7 +38,7 @@ public class UAIcoins : MonoBehaviour
     {
         //if (Hay_Texto_En_Escena)
         //{
-            CoinText.text = "uaiCoins: " + Coins;
+            CoinText.text = " " + Coins;
         //}
     }
 
