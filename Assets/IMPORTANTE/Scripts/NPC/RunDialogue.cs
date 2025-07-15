@@ -21,5 +21,7 @@ public class RunDialogue : MonoBehaviour
             }
         }
     }
+    //void para lo de q no se vuelva a mostyrar el dialogo o algo asi jeje fijate si te sirve desp
+    //public void 
 
 }
