@@ -10,16 +10,15 @@ public class Trigger_Dialogue : MonoBehaviour
     {
         if (other.CompareTag("Player") && DialogueWasShown == false)
         {
-            
-                Dialogue.Dialogue();
 
-                DialogueWasShown = true;
+            PlayDialogue();
             //si el dialogo ya se mostró activar una funcion q haga q no se vuelva a mostrar o algo q esté en el script de rundialogue maybe?? -ori
         }
     }
 
-    void PlayDialogue()
+    public void PlayDialogue()
     {
-
+        Dialogue.Dialogue();
+        DialogueWasShown = true;
     }
 }
