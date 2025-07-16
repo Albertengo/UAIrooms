@@ -3,18 +3,18 @@ using UnityEngine;
 public class EntrangeTrigger : MonoBehaviour
 {
 
-    //public AudioClip blockedSound;
+    public AudioClip blockedSound;
     public float interactionDistance = 2f;
 
-    //private AudioSource audioSource;
+    private AudioSource audioSource;
     private Transform player;
     private bool isPlayerNear = false;
     private bool playerInside = false;
 
     void Start()
     {
-        //audioSource = gameObject.AddComponent<AudioSource>();
-        //audioSource.playOnAwake = false;
+        audioSource = gameObject.AddComponent<AudioSource>();
+        audioSource.playOnAwake = false;
 
         player = GameObject.FindGameObjectWithTag("Player")?.transform;
 
@@ -48,11 +48,11 @@ public class EntrangeTrigger : MonoBehaviour
 
     void PlayBlockedSound()
     {
-        //if (blockedSound != null)
-        //{
-            //audioSource.clip = blockedSound;
-            //audioSource.Play();
+        if (blockedSound != null)
+        {
+            audioSource.PlayOneShot(blockedSound);
             Debug.Log("la puerta esta bloqueada");
         }
     }
+}
 
