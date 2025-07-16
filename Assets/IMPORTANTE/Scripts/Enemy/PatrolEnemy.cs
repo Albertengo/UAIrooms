@@ -59,6 +59,10 @@ public class PatrolEnemy : MonoBehaviour
             agent.SetDestination(waypoints[currentWaypoint].position);
         }
     }
+    void Update()
+    {
+        Move();
+    }
 
 
     public void Move()
