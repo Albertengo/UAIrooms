@@ -80,10 +80,14 @@ public class PlayerMovement : MonoBehaviour
             availableJumps = 0;
         }
     }
-    public void DontMove()
+    public void FreezePlayer()
     {
-        //FreezePosition
-        rb.constraints = RigidbodyConstraints.FreezeAll;
+        rb.constraints = RigidbodyConstraints.FreezePosition | RigidbodyConstraints.FreezeRotation;
+    }
+
+    public void UnfreezePlayer()
+    {
+        rb.constraints = RigidbodyConstraints.FreezeRotation;
     }
     private void OnCollisionEnter(Collision collision)
     {
