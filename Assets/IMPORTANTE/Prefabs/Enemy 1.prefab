@@ -107,8 +107,8 @@ NavMeshAgent:
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: 1
+  m_Height: 0.43
+  m_BaseOffset: 0.36
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!114 &3338587292063754984
@@ -248,6 +248,11 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: bd47645777251c948b8151c1c5c2fe5d,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7890359806601426067, guid: bd47645777251c948b8151c1c5c2fe5d,
+        type: 3}
+      propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: bd47645777251c948b8151c1c5c2fe5d,
