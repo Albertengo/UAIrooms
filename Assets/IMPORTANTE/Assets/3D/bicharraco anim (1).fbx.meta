@@ -3,7 +3,17 @@ guid: bd47645777251c948b8151c1c5c2fe5d
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cuerpo
+    second: {fileID: 2100000, guid: 60c2cc3a1aaad7b42a73b4e6948d55fc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: dientes y costillas
+    second: {fileID: 2100000, guid: f6da5d724e9b3e041a6c8e3f1ebf6d1d, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
