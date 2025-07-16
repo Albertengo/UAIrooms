@@ -22,6 +22,7 @@ public class DetectionRange_2 : MonoBehaviour
             hit.collider.GetComponent<RunDialogue>()?.Dialogue();
             hit.collider.GetComponent<Store>()?.EnterStore();
             hit.collider.GetComponent<CoinInteraction>()?.AddCoins();
+            hit.collider.GetComponent<Note>()?.CheckNote();
             //GetComponent<PlayerAttack>().detected = true;
             Debug.Log("Interactuando");
         }

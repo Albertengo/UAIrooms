@@ -19,7 +19,15 @@ public class Note : MonoBehaviour
             }
         }
     }
-
+    public void CheckNote()
+    {
+        if (!isNoteOpen)
+        {
+            OpenNote();
+        }
+        else
+            CloseNote();
+    }
     private void OpenNote()
     {
         noteUI.SetActive(true);
@@ -27,8 +35,8 @@ public class Note : MonoBehaviour
         Time.timeScale = 0f;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
-    }
 
+    }
     private void CloseNote()
     {
         noteUI.SetActive(false);
