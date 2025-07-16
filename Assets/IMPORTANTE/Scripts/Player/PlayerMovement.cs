@@ -80,7 +80,11 @@ public class PlayerMovement : MonoBehaviour
             availableJumps = 0;
         }
     }
-
+    public void DontMove()
+    {
+        //FreezePosition
+        rb.constraints = RigidbodyConstraints.FreezeAll;
+    }
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Floor"))

@@ -2611,7 +2611,8 @@ GameObject:
   - component: {fileID: 212491417}
   - component: {fileID: 212491416}
   - component: {fileID: 212491415}
-  m_Layer: 0
+  - component: {fileID: 212491419}
+  m_Layer: 6
   m_Name: Note
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2637,8 +2638,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 7.3689675, y: 10.217502, z: 0.50431556}
-  m_Center: {x: -0.0044810995, y: -0.0287399, z: 0.15215744}
+  m_Size: {x: 7.3689675, y: 10.217502, z: 0.56084156}
+  m_Center: {x: -0.004481077, y: -0.028743144, z: 0.18038185}
 --- !u!114 &212491416
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2719,6 +2720,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: -71.701, y: -1.12, z: 2.836}
+--- !u!114 &212491419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 212491414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 407be3613755ba54ab438d5fa4ac1088, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StartNode: Nota1_Nephy
 --- !u!4 &213438480 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6831773562521352065, guid: 5e81715bcf5e8d74aac19cf6f2b7e3d3,
@@ -9395,7 +9409,7 @@ MonoBehaviour:
   m_IgnoreTimeScale: 0
   m_WorldUpOverride: {fileID: 0}
   m_UpdateMethod: 2
-  m_BlendUpdateMethod: 1
+  m_BlendUpdateMethod: 0
   m_DefaultBlend:
     m_Style: 1
     m_Time: 2
@@ -11536,19 +11550,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 4720031546802018842}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &955628603
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 955628597}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e56ca9fd9e3b9ef49a493a1f11643e66, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Dialogue: {fileID: 955628604}
 --- !u!114 &955628604
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24609,7 +24610,7 @@ PrefabInstance:
         type: 3}
       propertyPath: onKeyPickup.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 955628603}
+      objectReference: {fileID: 0}
     - target: {fileID: 1055128565665081797, guid: 10aeb955206c72d45b30b0edbfe9f4c6,
         type: 3}
       propertyPath: onKeyPickup.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
@@ -24639,6 +24640,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Key
+      objectReference: {fileID: 0}
+    - target: {fileID: 3572757604541195164, guid: 10aeb955206c72d45b30b0edbfe9f4c6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5853367997106816566, guid: 10aeb955206c72d45b30b0edbfe9f4c6,
+        type: 3}
+      propertyPath: m_Height
+      value: 2.7058136
+      objectReference: {fileID: 0}
+    - target: {fileID: 5853367997106816566, guid: 10aeb955206c72d45b30b0edbfe9f4c6,
+        type: 3}
+      propertyPath: m_Radius
+      value: 0.59460956
+      objectReference: {fileID: 0}
+    - target: {fileID: 5853367997106816566, guid: 10aeb955206c72d45b30b0edbfe9f4c6,
+        type: 3}
+      propertyPath: m_Center.x
+      value: -0.055806637
+      objectReference: {fileID: 0}
+    - target: {fileID: 5853367997106816566, guid: 10aeb955206c72d45b30b0edbfe9f4c6,
+        type: 3}
+      propertyPath: m_Center.y
+      value: 0.018663803
+      objectReference: {fileID: 0}
+    - target: {fileID: 5853367997106816566, guid: 10aeb955206c72d45b30b0edbfe9f4c6,
+        type: 3}
+      propertyPath: m_Center.z
+      value: 0.007909139
       objectReference: {fileID: 0}
     - target: {fileID: 7591864217825307187, guid: 10aeb955206c72d45b30b0edbfe9f4c6,
         type: 3}
@@ -24698,10 +24729,6 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 955628604}
-    - targetCorrespondingSourceObject: {fileID: 3572757604541195164, guid: 10aeb955206c72d45b30b0edbfe9f4c6,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 955628603}
   m_SourcePrefab: {fileID: 100100000, guid: 10aeb955206c72d45b30b0edbfe9f4c6, type: 3}
 --- !u!1001 &5933352345709191986
 PrefabInstance:

@@ -10,7 +10,7 @@ public class DetectionRange_2 : MonoBehaviour
 
     private void Start()
     {
-        //Debug.DrawRay(Origin.position, Origin.forward * hitRange, Color.red, 2f);
+        Debug.DrawRay(Origin.position, Origin.forward * hitRange, Color.red, 2f);
 
     }
     public void InteractionInRange()
@@ -27,11 +27,11 @@ public class DetectionRange_2 : MonoBehaviour
         }
     }
 
-    //void OnDrawGizmos()
-    //{
-    //    if (Origin == null) return;
-    //    Gizmos.color = Color.red;
-    //    Gizmos.DrawRay(Origin.position, Origin.forward * hitRange);
-    //}
+    void OnDrawGizmos()
+    {
+        if (Origin == null) return;
+        Gizmos.color = Color.red;
+        Gizmos.DrawRay(Origin.position, Origin.forward * hitRange);
+    }
 
 }
